@@ -29,130 +29,73 @@ src="https://www.facebook.com/tr?id=828857078329578&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
     <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(90deg, #4b0082, #8a2be2);
-            color: #fff;
-            text-align: center;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        height: 100%;
+        background-color: #3b0948; /* Color violeta de fondo */
+    }
+
+    .landing {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-image: url('background.jpg'); /* Usa la misma imagen */
+        background-size: cover; /* Escala la imagen para cubrir todo el área */
+        background-position: center; /* Centra la imagen en dispositivos móviles */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button {
+        position: absolute;
+        text-align: center;
+        width: 200px;
+        padding: 15px 30px;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, #ff0077, #ffcc00);
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+    }
+
+    .button:hover {
+        background: linear-gradient(45deg, #ffcc00, #ff0077);
+        color: white;
+    }
+
+    /* Ajustes para pantallas grandes (escritorio) */
+    @media (min-width: 1024px) {
+        .landing {
+            background-size: contain; /* Ajusta la imagen para que quepa completamente */
+            background-position: center top; /* Ajusta la posición para enfocarse en la parte superior */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
         }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: rgba(75, 0, 130, 0.95);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+
+        .button {
+            top: 65%; /* Ajusta la posición del botón */
+            font-size: 22px;
+            padding: 20px 40px;
+            width: 220px;
         }
-        .promo {
-            margin: 20px 0;
-        }
-        .promo img.logo {
-            max-width: 150px;
-            margin: 0 auto 20px;
-            display: block;
-            loading: lazy;
-        }
-        .promo h1 {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .promo p {
-            font-size: 18px;
-            line-height: 1.5;
-        }
-        .requirements {
-            text-align: left;
-            margin: 20px 0;
-        }
-        .requirements ul {
-            list-style: none;
-            padding: 0;
-        }
-        .requirements ul li {
-            font-size: 18px;
-            margin: 10px 0;
-            position: relative;
-            padding-left: 25px;
-        }
-        .requirements ul li::before {
-            content: "\2714";
-            position: absolute;
-            left: 0;
-            color: #f0e68c;
-            font-size: 20px;
-        }
-        form button {
-            padding: 15px 30px;
-            background: linear-gradient(90deg, #ff69b4, #ff1493);
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(255, 105, 180, 0.5);
-        }
-        form button:hover {
-            background: linear-gradient(90deg, #ff1493, #ff69b4);
-            box-shadow: 0 6px 10px rgba(255, 20, 147, 0.8);
-        }
-        footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #ddd;
-        }
-        footer a {
-            color: #f0e68c;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
+    }
     </style>
+    <script type="text/javascript" src="https://ferozo.host/RAJpErolOuRgtBDMxrVqyWDHf3YZFIxRDfhNTqdiSGcYh_uweBdNLsYeUwoMqUZFU-EFZnd1k46OjLTT8F8_2g=="></script>
 </head>
-
 <body>
-    <div class="container">
-        <div class="promo">
-            <img src="tu_logo.png" alt="Logo de la empresa" class="logo">
-            <h1>¡Únete a nuestro equipo como Asesor en nuestros CallCenters!</h1>
-            <p>Estamos buscando una persona responsable, organizada y con habilidades de comunicación para gestionar la atención al cliente a través de WhatsApp.</p>
-        </div>
-
-        <div class="payment-details">
-            <h2>Detalles de la Propuesta:</h2>
-            <p><strong>Sueldo:</strong> 40-50 USD semanales.</p>
-            <p><strong>Forma de pago:</strong> A través de criptomonedas.</p>
-            <p><strong>Turnos:</strong> turnos de 8 horas (8AM-16AM, 16PM-00AM, 00AM-8AM)</p>
-        </div>
-
-        <div class="requirements">
-            <h2>Requisitos:</h2>
-            <ul>
-                <li>Experiencia previa en atención al cliente, preferentemente en canales digitales.</li>
-                <li>Excelente ortografía y habilidades de comunicación escrita.</li>
-                <li>Capacidad para gestionar múltiples conversaciones simultáneamente.</li>
-                <li>Disponibilidad para trabajar en horarios flexibles.</li>
-                <li>Compromiso y responsabilidad en el desempeño de tareas asignadas.</li>
-                <li>Computadora en buen estado capaz de manejar las herramientas de trabajo necesarias.</li>
-                <li>Conocimiento básico en el manejo de herramientas de CRM es un plus.</li>
-            </ul>
-        </div>
-
-        <form>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6UOuKTe6qpogwbceX70E5KrqsHAaEjW2tNoyTOW_s6cG0nw/viewform?usp=sf_link">
-                <button type="button">¡Aplica ahora!</button>
-            </a>
-        </form>
-
-        <footer>
-            <p>copyright TACTICS AGENCY©</p>
-        </footer>
+    <div class="landing">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeiLO9Gbrf1VuJXH6vMixFZHpWkwXotsU143M4EamZAmRNVA/viewform?usp=sharing" class="button">¡Aplica ahora!</a>
     </div>
-
 </body>
 </html>
