@@ -1,93 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta Laboral: Editor de video</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Propuesta Laboral · BM verificados</title>
 
-    <!-- Cargar fuentes de manera eficiente -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '898234908555985');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=898234908555985&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '898234908555985');  // tu ID
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=898234908555985&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- /Meta Pixel -->
 
-    
-     <style>
+  <style>
     :root{
       --rose:#ff2d75;
-      --violet:#7a1fa2;
-      --plum:#4b116b;
-      --white:#ffffff;
+      --violet:#8a2be2;
+      --plum:#3a0a55;
+      --ink:#ffffff;
       --glass: rgba(255,255,255,.08);
-      --border: rgba(255,255,255,.2);
+      --border: rgba(255,255,255,.18);
       --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --pad: 18px;
+      --maxw: 980px;
     }
-    *{ box-sizing:border-box; }
+
+    /* ====== Mobile-first base ====== */
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
     body{
-      margin:0; font-family:'Montserrat', sans-serif; color:var(--white);
-      background: radial-gradient(1200px 800px at 70% 20%, rgba(255,45,117,.18), transparent 60%),
-                  radial-gradient(1000px 800px at 10% 80%, rgba(124,77,255,.18), transparent 55%),
+      margin:0;
+      font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      /* Fondo solo con gradientes */
+      background:
+        radial-gradient(800px 500px at 90% 10%, rgba(255,45,117,.18), transparent 60%),
+        radial-gradient(700px 500px at 10% 90%, rgba(138,43,226,.18), transparent 55%),
+        linear-gradient(160deg, var(--plum) 10%, #4c1170 45%, #2b063f 100%);
     }
-    .overlay{ position:fixed; inset:0; background:linear-gradient(180deg, rgba(15,0,24,.70), rgba(15,0,24,.85)); pointer-events:none; }
-    .container{ width:min(1200px, 92%); margin-inline:auto; }
-    .grid{ display:grid; gap:24px; }
-    .hero{ padding:90px 0 40px; text-align:center; }
-    .badge{ display:inline-flex; align-items:center; gap:10px; padding:8px 14px; border-radius:999px; border:1px solid var(--border); background:var(--glass); backdrop-filter: blur(8px); box-shadow:var(--shadow); font-weight:600; }
-    .title{ font-size: clamp(34px, 5.2vw, 64px); margin:18px 0 10px; font-weight:800; }
-    .subtitle{ font-size: clamp(16px, 2.6vw, 22px); opacity:.95; margin-bottom:22px; font-weight:600; }
-    .rubro{ margin:26px auto 18px; display:inline-block; padding:14px 22px; border-radius:14px; background:linear-gradient(90deg, var(--rose), #9c27b0); font-weight:800; font-size:clamp(18px,3.2vw,24px); box-shadow:var(--shadow); }
-    .cta{ display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border:none; border-radius:999px; font-weight:800; font-size:18px; color:var(--white); background:linear-gradient(90deg, var(--rose), #9c27b0); box-shadow:var(--shadow); cursor:pointer; transition:transform .15s ease; text-decoration:none; }
-    .cta:hover{ transform:scale(1.05); }
-    .meta{ margin-top:14px; font-size:14px; opacity:.8; }
-    .section{ padding:38px 0; }
-    .cards{ grid-template-columns: repeat( auto-fit, minmax(240px,1fr) ); }
-    .card{ background:var(--glass); border:1px solid var(--border); border-radius:18px; padding:20px; box-shadow:var(--shadow); text-align:left; }
-    .card h3{ margin:6px 0 8px; font-size:20px; }
-    .card p{ margin:0; opacity:.95; line-height:1.5; font-size:15px; }
-    .steps{ grid-template-columns: repeat( auto-fit, minmax(220px,1fr) ); counter-reset: step; }
-    .step{ background:var(--glass); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow); position:relative; }
-    .step:before{ counter-increment: step; content: counter(step); position:absolute; top:-12px; left:-12px; width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg, var(--rose), #9c27b0); display:grid; place-items:center; font-weight:900; }
-    .faq{ border-top:1px solid var(--border); }
-    details{ background:var(--glass); border:1px solid var(--border); border-radius:14px; padding:14px 16px; box-shadow:var(--shadow); }
+
+    .wrap{ width:min(var(--maxw), 92%); margin-inline:auto; }
+
+    /* ====== HERO ====== */
+    .hero{
+      padding: 64px 0 28px;
+      text-align:center;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:6px 12px; border:1px solid var(--border); border-radius:999px;
+      background: var(--glass); backdrop-filter: blur(6px);
+      font-weight:700; box-shadow: var(--shadow); font-size:.95rem;
+    }
+    .title{
+      margin:14px 0 8px;
+      font-size: clamp(1.9rem, 7vw, 3.2rem);
+      font-weight:900; letter-spacing:.2px;
+    }
+    .subtitle{ margin:0 0 16px; opacity:.95; font-weight:700; font-size:1.05rem; }
+
+    .rubro{
+      margin:18px auto 12px; display:inline-block;
+      padding:12px 18px; border-radius:12px;
+      background: linear-gradient(90deg, var(--rose), var(--violet));
+      font-weight:900; font-size:1.05rem; box-shadow: var(--shadow);
+    }
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      width:100%; max-width: 520px;
+      padding:16px 20px; border:none; border-radius:999px;
+      font-weight:900; font-size:1.05rem; color:#fff;
+      background: linear-gradient(90deg, var(--rose), var(--violet));
+      box-shadow: var(--shadow);
+      text-decoration:none;
+      transition: transform .12s ease, box-shadow .12s ease;
+      touch-action: manipulation;
+    }
+    .cta:active{ transform: scale(.98); }
+    .meta{ margin-top:10px; font-size:.9rem; opacity:.8; }
+
+    /* ====== Sections ====== */
+    .section{ padding: 28px 0; }
+    .grid{ display:grid; gap:14px; }
+
+    .card{
+      background: var(--glass); border:1px solid var(--border);
+      border-radius: var(--radius); padding: var(--pad);
+      box-shadow: var(--shadow);
+    }
+    .card h3{ margin: 4px 0 6px; font-size:1.05rem; }
+    .card p{ margin:0; line-height:1.55; opacity:.95; font-size:.98rem; }
+
+    .steps{ counter-reset: step; }
+    .step{ position:relative; padding-top: 26px; }
+    .step::before{
+      counter-increment: step; content: counter(step);
+      position:absolute; top:-8px; left:-8px;
+      width:36px; height:36px; border-radius:12px;
+      display:grid; place-items:center; font-weight:900;
+      background: linear-gradient(135deg, var(--rose), var(--violet));
+      box-shadow: var(--shadow);
+    }
+
+    /* ====== FAQ ====== */
+    .faq{ border-top:1px solid var(--border); padding-top: 22px; }
+    details{
+      background: var(--glass); border:1px solid var(--border);
+      border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow);
+    }
     details + details{ margin-top:10px; }
-    summary{ cursor:pointer; font-weight:700; }
-    .footer{ text-align:center; font-size:13px; opacity:.8; padding:32px 0 60px; }
+    summary{ cursor:pointer; font-weight:900; }
+
+    /* ====== Desktop tweaks ====== */
+    @media (min-width: 720px){
+      .hero{ padding: 82px 0 36px; }
+      .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+      .grid.cols-4{ grid-template-columns: repeat(4, 1fr); }
+    }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-
-  <header class="hero container">
+  <header class="hero wrap">
     <div class="badge">📣 Equipo de Comunicación & Marketing Digital</div>
     <h1 class="title">🚀 PROPUESTA LABORAL</h1>
     <p class="subtitle">Buscamos perfiles confiables para escalar operaciones publicitarias.</p>
+
     <div class="rubro">🔒 Estamos en búsqueda de: <strong>BM verificados de Facebook</strong></div>
-    <a href="https://wa.me/XXXXXXXXXXX" class="cta">📩 Quiero postular</a>
-    <div class="meta">Tiempo estimado: 2 minutos · Respuesta en 24 h ⏱️</div>
+
+    <!-- Cambiá XXXXXXXXXXX por tu número con código de país.
+         Podés editar el texto prellenado con &text=... -->
+    <a class="cta"
+       href="https://wa.me/XXXXXXXXXXX?text=Hola%20vengo%20por%20la%20propuesta%20de%20BM%20verificado%20%E2%9C%85"
+       target="_blank" rel="noopener">
+      📩 Quiero postular
+    </a>
+    <div class="meta">Respuesta en 24 h ⏱️</div>
   </header>
 
-  <!-- Aquí siguen beneficios, requisitos, pasos y FAQ tal como antes -->
+  <main class="wrap">
+    <!-- Beneficios -->
+    <section class="section">
+      <div class="grid cols-2">
+        <article class="card"><h3>✅ Pagos rápidos</h3><p>Transferencia/USDT 💸 tras validación y prueba.</p></article>
+        <article class="card"><h3>🛡️ Proceso seguro</h3><p>Verificación por videollamada y accesos limitados.</p></article>
+        <article class="card"><h3>📈 Uso profesional</h3><p>Campañas white-hat y cumplimiento de políticas.</p></article>
+        <article class="card"><h3>🤝 Acuerdo claro</h3><p>Contrato simple + NDA opcional. Todo por escrito.</p></article>
+      </div>
+    </section>
 
-  <footer class="footer container">
-    <div>© 2025 • Tactics • Todos los derechos reservados</div>
+    <!-- Requisitos -->
+    <section class="section">
+      <div class="grid cols-2">
+        <div class="card"><h3>🔐 Verificado</h3><p>BM con 2FA activo y titularidad demostrable.</p></div>
+        <div class="card"><h3>🧾 Historial</h3><p>Sin políticas activas ni bloqueos recientes.</p></div>
+        <div class="card"><h3>💳 Método</h3><p>Tarjeta válida o línea de crédito aprobada.</p></div>
+        <div class="card"><h3>📍 Origen</h3><p>País de registro y zona horaria declarados.</p></div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="section">
+      <h3 style="margin:0 0 10px;font-size:1.15rem;">⚙️ Cómo funciona</h3>
+      <div class="grid steps">
+        <div class="card step"><h3>Aplicá</h3><p>Escribinos por WhatsApp con datos básicos del BM.</p></div>
+        <div class="card step"><h3>Validación</h3><p>Chequeos.</p></div>
+        <div class="card step"><h3>Prueba</h3><p>Acceso restringido para test de facturación.</p></div>
+        <div class="card step"><h3>Pago</h3><p>Si está ok, se acredita y definimos modalidad de uso.</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq">
+      <h3 style="margin:0 0 10px;font-size:1.15rem;">❓ Preguntas frecuentes</h3>
+      <details>
+        <summary>¿Qué es un BM “verificado”? 🔒</summary>
+        <p>Business Manager con identidad confirmada, 2FA, activos claros y medio de pago válido.</p>
+      </details>
+      <details>
+        <summary>¿Cómo es el pago? 💸</summary>
+        <p>Transferencia o USDT tras validación y prueba satisfactoria (fee fijo o participación).</p>
+      </details>
+      <details>
+        <summary>¿Qué uso le dan? 📈</summary>
+        <p>Campañas permitidas; cumplimiento estricto de políticas de Meta.</p>
+      </details>
+      <details>
+        <summary>¿Puedo cancelar? 🧾</summary>
+        <p>Sí. Se revoca acceso y se liquida lo pendiente según contrato.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="wrap" style="text-align:center; font-size:.9rem; opacity:.8; padding:30px 0 50px;">
+    © 2025 • Tactics • Todos los derechos reservados
   </footer>
 </body>
-
 </html>
